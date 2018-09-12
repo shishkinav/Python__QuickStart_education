@@ -37,11 +37,13 @@ if answer == 'Y':
     if do == 1:
         print(os.listdir())
     elif do == 2:
-        print('Имя текущей директории: ')
-        print('Платформа ОС: ' + str(sys.platform))
-        print('Кодировка файловой системы: ' + str(os.device_encoding()))
-        print('Логин пользователя: ' + str(os.getlogin()))
-        print('Количество CPU: ' + str(psutil.cpu_count()))
+        print('Имя текущей директории: ', os.getcwd())
+        print('Платформа ОС: ', sys.platform)
+        print('Кодировка файловой системы: ', sys.getfilesystemencoding())
+        print('Логин пользователя: ', psutil.users())
+        print('Количество CPU: ', psutil.cpu_count(), '\n При этом процессор используется на ', psutil.cpu_percent(), '% ')
+
+
     elif do == 3:
         print(psutil.pids())
     else:
