@@ -33,17 +33,6 @@ def sys_info():
     print("Текущая директория: ", os.getcwd())
     print("Текущий пользователь: ", os.getlogin())  
 
-def remove_file(dirname):
-    count_remove = 0
-    file_list = os.listdir(dirname)
-    for f in file_list:
-        print(f)
-        # функция join сформирует полный путь к файлу независимо от ОС
-        fullname = os.path.join(dirname, f)
-        if fullname.endswith('.dupl'):
-            os.remove(fullname)
-            count_remove += 1
-    print('Удалено '+str(count_remove)+' файлов.')
 
 print("Great Python Program!")
 print("Привет, программист!")
@@ -89,12 +78,17 @@ while answer != 'q':
         elif do == 6:
             print("=Удаление дубликатов в директории=")
             dirname = input("Укажите имя директории:")
-            remove_file(dirname)
+            file_list = os.listdir(dirname)
+            
             # i = 0
             # while i < len(file_list):
             
             # Для работы со списками удобней и лучше использовать цикл for
-
+            for f in file_list:
+                # функция join сформирует полный путь к файлу независимо от ОС
+                fullname = os.path.join(dirname, f)       
+                if fullname.endswith('.dupl'):
+                    os.remove(fullname)
                 # i += 1    
                     
         else:

@@ -23,14 +23,14 @@ def duplicate_file(filename):
             return False
 
 
-def del_dublicats(dir_name):
-    file_list = os.listdir(dir_name)
+def del_dublicats(dirname):
+    file_list = os.listdir(dirname)
    
     # Счетчик количества удаленных файлов    
     doubl_count = 0
     # Цикл for перебирает все значения из списка file_list
     for f in file_list:
-        fullname = os.path.join(dir_name, f)
+        fullname = os.path.join(dirname, f)
         if fullname.endswith('.dupl'):
             os.remove(fullname)
             # Делаем проверку, что файл не существует (т.е. был удален)
@@ -94,8 +94,8 @@ while answer != 'q':
 
         elif do == 6:
             print("=Удаление дубликатов в директории=")
-            dir_name = input("Укажите имя директории:")
-            count = del_dublicats(dir_name)
+            dirname = input("Укажите имя директории:")
+            count = del_dublicats(dirname)
             print("-- Удалено файлов: ", count)
 
         else:

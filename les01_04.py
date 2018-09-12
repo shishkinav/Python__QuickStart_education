@@ -57,33 +57,7 @@ while answer != 'q':
                 if os.path.isfile(file_list[i]):
                     shutil.copy(file_list[i], file_list[i] + '.dupl')
                 # Чтобы цикл имел возможность завершиться нужно изменять переменную цикла        
-                i += 1
-        elif do == 5:
-            print("==Дублирование определенного файла==")
-            file_list = os.listdir()
-            i = 0
-            # Цикл while будет выполняться пока i будет меньше длины списка file_list
-            while i < len(file_list):
-                print(str(i+1)+' '+str(file_list[i])+'\n')
-                i += 1
-            number_element = input('Укажите порядковый номер файла для дублирования: ')
-            if number_element > 0 and number_element <= len(file_list):
-                if os.path.isfile(file_list[number_element-1]):
-                    shutil.copy(file_list[number_element-1], file_list[number_element-1] + '.dupl')
-                else:
-                    print('Такого порядкового номера нет в списке!')
-
-        elif do == 6:
-            print("==Удаление файлов с окончание '.dupl'==")
-            file_list = os.listdir()
-            i = 0
-            # Цикл while будет выполняться пока i будет меньше длины списка file_list
-            while i < len(file_list):
-                # Необходимо выполнить проверку isfile, т.к. при попытке копирования директории будет возникать ошибка
-                os.remove()
-                # Чтобы цикл имел возможность завершиться нужно изменять переменную цикла
-                i += 1
-
+                i += 1    
         else:
             pass
        

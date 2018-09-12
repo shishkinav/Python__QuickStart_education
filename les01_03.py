@@ -12,10 +12,10 @@
 
 # Подключение модуля производится командой import.
 # Модуль os идет в комплекте с Python'ом.
-# psutil - сторонний модуль, нужно установить через pip install psutil
 import os
-import psutil
-import sys
+
+# psutil - сторонний модуль, нужно установить через pip install psutil
+import psutil       
 
 
 print("Great Python Program!")
@@ -37,11 +37,7 @@ if answer == 'Y':
     if do == 1:
         print(os.listdir())
     elif do == 2:
-        print('Имя текущей директории: ')
-        print('Платформа ОС: ' + str(sys.platform))
-        print('Кодировка файловой системы: ' + str(os.device_encoding()))
-        print('Логин пользователя: ' + str(os.getlogin()))
-        print('Количество CPU: ' + str(psutil.cpu_count()))
+        pass
     elif do == 3:
         print(psutil.pids())
     else:
