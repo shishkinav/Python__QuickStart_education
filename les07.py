@@ -30,7 +30,35 @@ def draw_circle(r, color):
     turtle.fillcolor(color)
     turtle.begin_fill()
     turtle.circle(r)
-    turtle.end_fill()    
+    turtle.end_fill()
+
+def draw_rectangle(x1, y1, x2, y2, color):
+    ''' Функция рисования прямоугольника по координатам двух диагональных точек
+    '''
+    turtle.reset()
+    gotoxy(x1, y1)
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.forward(x2 - x1)
+    turtle.left(90)
+    turtle.forward(y2 - y1)
+    turtle.left(90)
+    turtle.forward(x2 - x1)
+    turtle.left(90)
+    turtle.forward(y2 - y1)
+    turtle.end_fill()
+
+
+def maxElement (a, b):
+    list = []
+    if min > max:
+        list[0] = b
+        list[1] = a
+    else:
+        list[0] = a
+        list[1] = b
+    return list
+
     
 # Скорость, равная нулю - максимальная    
 turtle.speed(0)
@@ -55,16 +83,18 @@ draw_circle(22, "brown")
 
 answer = ''
 while answer != 'N':
-    answer = turtle.textinput("Нарисовать окружность", "Y/N")
+    answer = turtle.textinput("Нарисовать прямоугольник", "Y/N")
     #tkSimpleDialog.askstring("Нарисовать окружность", "Y/N")       # Для 2.x Python
     
     if answer == 'Y':
-        turtle.penup()
-        turtle.goto(random.randrange(-300,300), random.randrange(-200,200))
-        turtle.pendown()
-        turtle.fillcolor(random.random(),random.random(),random.random())
-        turtle.begin_fill()
-        turtle.circle(random.randrange(1,100))
-        turtle.end_fill()
+        x1 = random.randrange(-200, 200)
+        x2 = random.randrange(-200, 200)
+        y1 = random.randrange(-200, 200)
+        y2 = random.randrange(-200, 200)
+        #xArray = maxElement(x1, x2)
+        #yArray = maxElement(y1, y2)
+        draw_rectangle(x1, y1, x2, y2, 'black')
+
+
     else:
         pass
