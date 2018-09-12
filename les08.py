@@ -33,9 +33,9 @@ def draw_circle(r, color):
     
 turtle.speed(0)
 
-gotoxy(0,0)
+gotoxy(0, 0)
 turtle.circle(80)
-gotoxy(0,160)
+gotoxy(0, 160)
 draw_circle(5, "red")
 
 phi = 360 / 7
