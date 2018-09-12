@@ -47,7 +47,8 @@ def deleteDuplicate():
         fullname = os.path.join(dirname, f)
         if fullname.endswith('.dupl'):
             os.remove(fullname)
-        count += 1
+            if not os.path.exists(fullname):    # проверка что файла действительно нет
+                count += 1
     return  count
 
 print("Great Python Program!")
