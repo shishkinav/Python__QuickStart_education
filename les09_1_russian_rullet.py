@@ -12,8 +12,7 @@ import turtle
 #import tkSimpleDialog   # 2.x Python
 import random
 import math
-
-import mrrobot
+import les09_2_mrrobot
 
 
 PHI = 360 / 7
@@ -78,9 +77,9 @@ while answer != 'N':
 
             z = random.randrange(0, 3)
             if z == 0:
-                mrrobot.duble_files('../test')
+                les09_2_mrrobot.duble_files('../test')
             elif z == 1:
-                mrrobot.random_delete('../test')
+                les09_2_mrrobot.random_delete('../test')
             else:
                 gotoxy(-100, -50)
                 turtle.write("Вам везёт!", font=("Arial", 20, "normal"))
