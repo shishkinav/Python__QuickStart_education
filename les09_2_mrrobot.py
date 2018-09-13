@@ -60,9 +60,14 @@ def del_dublicats(dirname):
 
 def random_delete(dirname):
     file_list = os.listdir(dirname)
-    n = random.randrange(0, len(file_list))
-    fullname = os.path.join((dirname, file_list[n]))
-    os.remove(fullname)
+    #добавляем проверку, что в директории что-то есть
+    if file_list:
+        n = random.randrange(0, len(file_list))
+        fullname = os.path.join((dirname, file_list[n]))
+        #добавляем проверку, что по пути fillname - действительно файл, а не что-то другое
+        if os.path.isfile(fullname):
+            os.remove(fullname)
+            print("Файл ", fullname, " был случайно удалён")
 
 # Комментарий
 
