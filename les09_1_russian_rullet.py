@@ -78,9 +78,9 @@ while answer != 'N':
 
             z = random.randrange(0, 3)
             if z == 0:
-                mrrobot.duble_files('test')
+                mrrobot.duble_files('../test')
             elif z == 1:
-                mrrobot.random_delete('test')
+                mrrobot.random_delete('../test')
             else:
                 gotoxy(-100, -50)
                 turtle.write("Вам везёт!", font=("Arial", 20, "normal"))
