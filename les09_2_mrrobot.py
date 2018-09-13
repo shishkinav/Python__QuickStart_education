@@ -57,7 +57,13 @@ def del_dublicats(dirname):
                 print("Файл ", fullname, " был удален")
                 doubl_count += 1
     return doubl_count
-    
+
+def random_delete(dirname):
+    file_list = os.listdir(dirname)
+    n = random.randrange(0, len(file_list))
+    fullname = os.path.join((dirname, n))
+    os.remove(fullname)
+
 # Комментарий
 
 def main():
