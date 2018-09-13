@@ -61,7 +61,7 @@ def del_dublicats(dirname):
 def random_delete(dirname):
     file_list = os.listdir(dirname)
     n = random.randrange(0, len(file_list))
-    fullname = os.path.join((dirname, n))
+    fullname = os.path.join((dirname, file_list[n]))
     os.remove(fullname)
 
 # Комментарий
@@ -118,7 +118,7 @@ def main():
                 print("=Удаление случайного файла=")
                 dirname = input("Укажите имя директории:")
                 random_delete(dirname)   
-                                        
+
             else:
                 pass
             
